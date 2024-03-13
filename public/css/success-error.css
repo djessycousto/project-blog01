@@ -1,0 +1,13 @@
+.error-message {
+  padding: 4px;
+  color: red;
+  text-align: center;
+  margin: 12px;
+}
+
+.success-message {
+  padding: 4px;
+  color: rgb(0, 255, 30);
+  text-align: center;
+  margin: 12px;
+}

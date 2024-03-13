@@ -1,0 +1,143 @@
+// this code work just for add text not image
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("registerForm");
+  const btn = document.getElementById("registerBtn");
+
+  btn.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("userName").value;
+    const email = document.getElementById("userEmail").value;
+    const password = document.getElementById("userPassword").value;
+    const userImageInput = document.getElementById("userImage");
+    const userImage = userImageInput.files[0];
+
+    const messageDiv = form.querySelector(".message");
+
+    if (!name || !email || !password || !userImage) {
+      messageDiv.textContent = "All fields are required, including an image";
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      messageDiv.textContent = "Invalid email format";
+      return;
+    }
+
+    if (password.length < 6) {
+      messageDiv.textContent = "Password must be at least 6 characters";
+      return;
+    }
+
+    function formDataToObject(formData) {
+      const obj = {};
+      formData.forEach((value, key) => {
+        obj[key] = value;
+      });
+      return obj;
+    }
+    //
+    try {
+      let formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("password", password);
+      formData.append("userImage", userImage);
+
+      // console.log("FormData:", fromEntries(formData));
+
+      const formDataObject = formDataToObject(formData);
+      console.log(formDataObject);
+
+      try {
+        const response = await axios.post("/auth/add", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        console.log("Response:", response.data);
+        // Handle success, e.g., show a success message to the user
+      } catch (error) {
+        console.error("Error in request:", error);
+        console.error("Response data:", error.response.data);
+        // Handle error, e.g., show an error message to the user
+      }
+    } catch (error) {
+      console.error("Error in formData creation:", error);
+    }
+  });
+});
+
+// ADD with promise ALL
+
+const addPostBtn = document.getElementById("addpostBtn");
+document.addEventListener("DOMContentLoaded", () => {
+  addPostBtn.addEventListener("click", async (e) => {
+    // prevent default
+    e.preventDefault();
+
+    const title = document.getElementById("title").value;
+    const post = document.getElementById("post").value;
+    const category = document.getElementById("category").value;
+    const postPictureInput = document.getElementById("postPictureAdd");
+    // console.log(postPictureInput);
+    const postPicture = postPictureInput.files[0];
+    // console.log(postPicture);
+
+    if (!title || !post || !category) {
+      console.log("all field must be fill");
+    }
+    // form data
+
+    const updateData = new FormData();
+    updateData.append("title", title);
+    updateData.append("post", post);
+    updateData.append("category", category);
+    updateData.append("postPicture", postPicture);
+
+    // Append values to FormData
+
+    // test entries
+    for (const entry of updateData.entries()) {
+      // console.log(entry);  //okay
+    }
+
+    try {
+      const [postDetailsResponse, imageResponse] = await Promise.all([
+        fetch("/posts", {
+          method: "POST",
+          body: updateData,
+        }),
+        fetch("/posts/uploadPostPic", {
+          method: "POST",
+          body: updateData,
+        }),
+      ]);
+
+      console.log(updateData, "image");
+
+      picturePost;
+
+      if (!postDetailsResponse.ok) {
+        console.error("Error uploading post details data");
+      } else {
+        const postData = await postDetailsResponse.json();
+        console.log(postData, "post data saved");
+      }
+
+      if (!imageResponse.ok) {
+        console.error(
+          "Error uploading post image data: ",
+          imageResponse.statusText || "Unknown error"
+        );
+      } else {
+        const postImageData = await imageResponse.json();
+        console.log(postImageData, "image data saved");
+      }
+    } catch (error) {
+      "Error uploading user image:" || "Unknown error";
+    }
+  }); //dom
+});

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="/posts/home">Home</a>
+            <a href="/posts/blogs">Blogs</a>
+            <a href="/posts/about">About</a>
+            <a href="/posts/contact">Contact</a>
+        </nav>
+        <div>
+            <input type="text" placeholder="Search">
+
+        </div>
+    </header>
+
+    <body>
+        Blogs here
+
+
+
+
+        <div class="blog-section">
+            <% allPosts.forEach((post)=>{%>
+                <% const user=post.user; %>
+
+
+
+
+                    <!-- Repeat the following blog-card structure for each blog post -->
+                    <div class="blog-card">
+                        <img src="/images/8-1qXClYuOgKdkNa6.png" alt="Blog Image" class="blog-image">
+                        <div class="blog-info">
+
+                            <div class="top">
+                                <p><strong>
+                                        <%=user.role%>
+                                            <%=console.log(post.user.role)%>
+
+                                    </strong></p>
+                                <p>
+                                    <%= new Date(post.createdAt).toLocaleString() %>
+
+                                </p>
+                            </div>
+                            <div>
+                                <p class="title">
+                                    <%=post.title%>
+                                </p>
+                                <p>Blog <%=post.post%>
+                                </p>
+
+                            </div>
+                            <div class="bottom">
+                                <span>
+                                    Views <%=post.view%>
+                                </span>
+                                <span>comments: 0</span>
+                                <button> <span>
+                                        Likes: <%=post.likes.length%>
+                                            <!-- <%=console.log(post.likes)%> -->
+
+                                    </span></button>
+                            </div>
+
+                        </div>
+                        <!-- Repeat the above structure for each blog post -->
+                    </div>
+
+                    <% }); %>
+        </div>
+    </body>
+
+</html>

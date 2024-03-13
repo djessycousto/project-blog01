@@ -1,0 +1,152 @@
+:root {
+  /* margin space */
+
+  --s-gap: 16px;
+  --sm-gap: 18px;
+  --m-gap: 24px;
+  --l-gap: 28px;
+  /* font */
+
+  --main-fonts: "Poppins", sans-serif;
+  --font-weight-thin: 100;
+  --font-weight-thin-i: 100;
+  --font-weight-extra-light: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  /* max-width */
+
+  --max-width: 1120px;
+
+  /* color */
+
+  --primary-40: #000;
+  --primary-60: #5046bb;
+  --secodary: #dedede;
+  --secodary-20: #d8d4ff;
+  --third: #4e62cd;
+  --third-variant: rgba(80, 70, 187, 0.87);
+}
+
+/* reset the margin and border on insight page */
+.main-post-contents {
+  margin-bottom: unset;
+  border-bottom: none;
+}
+/* about the author */
+
+.about-the-author {
+  background-color: var(--secodary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.about-the-author-image {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: var(--primary-40);
+  gap: 132px;
+}
+.about-the-author-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.about-the-author-text {
+  /* width: 60%; */
+  width: 60%;
+  padding: 16px;
+  margin-left: 32px;
+}
+
+.about-the-author-text h4 {
+  font-weight: var(--font-weight-medium);
+  font-size: 20px;
+  padding: 12px 0;
+}
+.about-the-author-text h5 {
+  font-weight: var(--font-weight-medium);
+}
+
+.about-the-author-text .socials {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+}
+.about-the-author-text .socials span {
+  width: 32px;
+  height: 32px;
+  background-color: var(--primary-40);
+}
+/* related pages */
+.related-topic {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 60px auto;
+}
+
+.related-topic a {
+  width: 380px;
+  height: 320px;
+  background-color: #000;
+}
+
+/* comments section  */
+.comments {
+  display: block;
+  width: 80%;
+  /* border: 1px solid red; */
+  margin: 100px auto;
+}
+.comments h5 {
+  font-weight: var(--font-weight-medium);
+  border-bottom: 1px solid black;
+  padding: 8px;
+}
+
+.comments .output-comments {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 12px 0;
+}
+
+.comments .line-div {
+  border-bottom: 1px solid black;
+  margin-top: 16px;
+}
+
+.comments .comments-inputs textarea {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid black;
+  /* border-radius: 100px; */
+  background-color: transparent;
+  appearance: none;
+  outline: none; /* Remove the default focus outline */
+  resize: none;
+}
+
+.comments .comments-inputs textarea::placeholder {
+  /* Center the placeholder text vertically */
+  line-height: 2; /* Adjust the line-height as needed */
+}
+
+.comments .comments-inputs textarea:focus {
+  /* Remove the focus state styles */
+  /* border: 1px solid black; */
+  background-color: transparent;
+}
+
+.block {
+  width: 100%;
+  height: 500px;
+  background-color: #d97200;
+}

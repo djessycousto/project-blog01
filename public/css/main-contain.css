@@ -1,0 +1,377 @@
+/* #########section-one################ */
+
+.section-one {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: auto;
+
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.filter-1 {
+  display: none;
+}
+
+#search-form {
+  display: none;
+}
+/* news letter */
+
+.newsletter-container {
+  background-color: var(--third);
+  padding: 8px;
+  /* add this */
+  margin: 32px auto;
+}
+
+.newsletter-container .message {
+  font-size: 12px;
+}
+
+.newsletter-container h5 {
+  padding: 0px 8px;
+  margin-top: 12px;
+  font-size: 12px;
+  margin: 8px 0;
+  text-align: center;
+  color: white;
+}
+
+#news-letter {
+  /* height: 350px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 0px 0px 10px 0px;
+}
+
+#news-letter #newsLetter-email {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  font-size: 16px;
+}
+
+#news-letter #newsLetter-email::placeholder {
+  font-size: 12px;
+  opacity: 0.4;
+  font-style: italic;
+}
+
+#news-letter #newsLetter-send-btn {
+  width: 100%;
+  border: none;
+  margin: 4px 0px 10px 0px;
+  background-color: var(--btn-main-color);
+  font-size: 12px;
+  color: var(--primary-40);
+  padding: 4px;
+}
+
+.main-post-container {
+  /* border: 1px solid blue; */
+  width: 90%;
+  order: -1;
+  padding: 16px;
+  margin: auto;
+}
+
+.main-post-contents {
+  padding: 16px 0;
+  border-bottom: 1px solid black;
+  margin-bottom: 42px;
+}
+
+/* .main-post-container h4 {
+
+} */
+
+.main-post-banner {
+  /* border: 2x solid greenyellow; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* .main-post-banner i {
+  font-size: 40px;
+  color: black;
+} */
+.p-holder-for-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.p-holder-for-pic img {
+  width: 100%;
+  height: 100%;
+  /* background-color: #000; */
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.main-post-banner-details h4 {
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+}
+.main-top-details {
+  font-size: 12px;
+  font-weight: var(--font-weight-light);
+  display: flex;
+  /* gap: 32px; */
+  gap: 18px;
+}
+
+/* main img */
+
+/* Styles for the main img without image */
+/* .empty-image {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+} */
+
+.main-block-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  height: auto;
+}
+
+/* .main-block-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 12px 0;
+  object-fit: cover;
+  object-position: 50%;
+} */
+
+.main-block-image:not(:has(img)) {
+  width: 0;
+  height: 0;
+  padding: 0; /* Optional: Remove any padding */
+  margin: 0; /* Optional: Remove any margin */
+}
+
+/* main img */
+.main-block-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  /* Adjust this value based on your design */
+  height: auto; /* Allow the height to adjust automatically */
+}
+
+.main-block-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 12px 0;
+  object-fit: cover;
+  object-position: 50%;
+}
+
+.tag {
+  font-size: 12px;
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+.tag span {
+  padding: 4px;
+  background-color: var(--btn-other-colors);
+  color: white;
+}
+.main-post-text {
+  margin-bottom: 12px;
+}
+
+.main-post-text p {
+  font-size: 12px;
+  /* For modern browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  text-overflow: ellipsis;
+
+  /* For other browsers */
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  overflow: hidden;
+  -moz-line-clamp: 2; /* Limit to 3 lines */
+  text-overflow: ellipsis;
+}
+
+/* btn */
+
+.main-btn-and-icon {
+  /* border: 1px solid orange; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-read-more-btn {
+  font-size: 12px;
+  padding: 4px 8px;
+  background-color: var(--btn-main-color);
+  color: var(--primary-40);
+}
+
+.likes-view-comments-number i,
+.likes-view-comments-number a {
+  font-size: 12px;
+  color: #000;
+}
+
+.likes-view-comments-number i {
+  margin-right: 8px;
+}
+
+/*3############# media###########*/
+@media only screen and (min-width: 760px) {
+  .section-one {
+    flex-direction: row;
+    max-width: var(--max-width);
+    margin-top: 32px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  /* left side */
+
+  aside {
+    align-self: flex-start;
+    position: sticky;
+    top: 50px;
+    left: 0;
+  }
+
+  .filter {
+    margin-right: 32px;
+    font-weight: var(--font-weight-light);
+  }
+
+  .filter-1 {
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 12px; */
+  }
+
+  .filter-1 span {
+    padding: 4px 8px;
+  }
+  #search-form {
+    display: block;
+    margin: 16px 0;
+  }
+  #search-form input[type="search"] {
+    outline: 0;
+    border: 1px solid grey;
+    border-radius: 50px;
+    padding: 4px 16px;
+    opacity: 0.2;
+    font-size: 12px;
+    /* background-color: rgb(202, 202, 202); */
+  }
+
+  #search-form input[type="search"]:focus {
+    outline: 0;
+    border: 1px solid grey;
+    opacity: 0.5;
+  }
+
+  /* news letter */
+
+  .newsletter-container {
+    width: 200px;
+  }
+
+  /* #news-letter {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+  }
+
+  #news-letter #newsLetter-email {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    font-size: 16px;
+  }
+
+  #news-letter #newsLetter-email::placeholder {
+    font-size: 12px;
+    opacity: 0.4;
+  }
+
+  #news-letter #newsLetter-send-btn {
+    width: 100%;
+    border: none;
+    margin: 0px 0px 10px 0px;
+    background-color: #000;
+    font-size: 12px;
+    color: white;
+    padding: 4px;
+  } */
+
+  /* right side */
+  .main-post-container {
+    order: unset;
+  }
+
+  .main-post-container {
+    width: 50%;
+    order: unset;
+    margin: unset;
+    margin-left: auto;
+  }
+
+  .main-post-banner-details h4 {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+  }
+
+  .main-top-details {
+    gap: 32px;
+    /* gap: 18px; */
+  }
+
+  /* main img */
+  .main-block-image {
+    width: 100%;
+    height: 280px;
+  }
+
+  .main-post-text p {
+    font-size: 16px;
+    font-weight: var(--font-weight-light);
+  }
+
+  .main-read-more-btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+  .likes-view-comments-number i,
+  .likes-view-comments-number a {
+    font-size: 16px;
+  }
+}

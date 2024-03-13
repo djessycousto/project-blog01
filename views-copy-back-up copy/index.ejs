@@ -1,0 +1,123 @@
+<!--################### header ###################-->
+
+<%- include('./partials/header-nav'); %>
+
+    <!--################### end header ###################-->
+    <!--################### hero ###################-->
+    <section class="hero">
+
+        <img src="./image/jakob-owens-eD3mggHwM5M-unsplash.jpg" alt="">
+
+        <div class="inner-div">
+            <div class="hero-text-content">
+                <h1>FREE MY MIND</h1>
+                <p>let blog mind free and peace of discovering...</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!--###################  end hero ###################-->
+
+
+    <!--###################  side and post ###################-->
+
+
+
+    <section class="section-one">
+
+        <aside>
+            <div class="filter">
+
+                <div class="filter-1">
+                    <h3> FILTER BY TOPIC </h3>
+                    <span>Latest</span>
+                    <span> Accessibility </span>
+                    <span>Brand Development </span>
+                    <span> Content </span>
+                </div>
+
+                <div class="filter-1">
+
+                    <h3> FILTER BY TOPIC</h3>
+                    <span>Latest</span>
+                    <span> Accessibility </span>
+                    <span>Brand Development </span>
+                    <span> Content </span>
+
+                </div>
+
+
+                <div class=" newsletter-container">
+
+                </div>
+            </div>
+
+        </aside>
+
+
+        <main class="main-post-container">
+
+
+            <!-- single card loop goes here -->
+            <% allPosts.forEach((post)=>{%>
+
+
+
+
+                <div class="main-post-contents">
+                    <h4>Profile: Tech Investor Paul Dooby</h4>
+                    <!-- banner imag name time  -->
+                    <div class="main-post-banner">
+                        <!-- <i class="fa-solid fa-user"></i> -->
+                        <div class="p-holder-for-pic">
+                            <img src="./image/jakob-owens-eD3mggHwM5M-unsplash.jpg" alt="">
+                        </div>
+
+                        <div class="main-top-details">
+                            <span> name </span> <span> 00.00 </span><span> mar 21.2013 </span>
+                        </div>
+
+
+                    </div>
+                    <!-- end banner end imag name time  -->
+
+                    <div class="main-block-image">
+                        <img src="./image/dejan-zakic-UxArzYUBXpI-unsplash.jpg" alt="">
+                    </div>
+                    <div class="tag">
+                        <span> Fasion </span>
+                        <span> Tech </span>
+                    </div>
+                    <div class="main-post-text">
+                        <p>
+
+                        </p>
+                    </div>
+
+                    <div class="main-btn-and-icon">
+                        <a href="#" class="main-read-more-btn"> Read more </a>
+                        <div class="likes-view-coments-number">
+                            <span>views: 0</span>
+                            <a href="#" class="comment">comments: 0</a>
+                            <a href="#" class="likes">likes: 0</a>
+                        </div>
+                    </div>
+                </div>
+
+                <% })%>
+                    <!--  end single card loop goes here -->
+        </main>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+    <!--###################  footer  ###################-->

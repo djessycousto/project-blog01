@@ -1,0 +1,126 @@
+:root {
+  /* margin space */
+
+  --s-gap: 16px;
+  --sm-gap: 18px;
+  --m-gap: 24px;
+  --l-gap: 28px;
+  /* font */
+
+  --main-fonts: "Poppins", sans-serif;
+  --font-weight-thin: 100;
+  --font-weight-thin-i: 100;
+  --font-weight-extra-light: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  /* max-width */
+
+  --max-width: 1120px;
+
+  /* color */
+
+  --primary-40: #000;
+  --primary-60: #5046bb;
+  --secodary: #dedede;
+  --secodary-20: #d8d4ff;
+  --third: #4e62cd;
+  --third-variant: rgba(80, 70, 187, 0.87);
+}
+/* #########section-one################ */
+
+body {
+  background-color: var(--third);
+  display: grid;
+  place-items: center;
+}
+
+/* .form-setup {
+  background-color: #dedede;
+  padding: 40px 0;
+} */
+
+.form-center {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+
+  margin: auto;
+}
+
+.login {
+  width: 40%;
+}
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login form input {
+  padding: 4px;
+  border: none;
+}
+
+#loginBtn {
+  padding: 12px 20px;
+  background-color: #000;
+  color: white;
+  border: none;
+}
+
+/* register */
+.form-setup {
+  width: 80%;
+  background-color: #dedede;
+  padding: 40px 0;
+}
+
+.registration-form {
+  width: 60%;
+  margin: auto;
+}
+
+.registration-form form input {
+  padding: 8px;
+  border: none;
+}
+
+#registerBtn {
+  padding: 12px;
+  background-color: #000;
+  color: white;
+  border: none;
+}
+
+#registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link-back a {
+  text-decoration: none;
+  color: #d97200;
+}
+
+.logo-signup a {
+  display: block;
+  text-decoration: none;
+  font-size: 34px;
+  text-align: center;
+  color: #000;
+}
+
+#aboutTheUser {
+  /* width: 60%; */
+  height: 120px;
+  padding: 12px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  resize: none;
+}

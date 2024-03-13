@@ -1,0 +1,169 @@
+<!--################### header ###################-->
+
+<%- include('./partials/nav', { userLogged: userLogged }) %>
+
+
+    <style>
+        #main-post-text-unclamp p {
+            font-size: 16px;
+            font-weight: var(--font-weight-light);
+        }
+    </style>
+
+    <!--################### hero ###################-->
+    <section class="hero">
+        <img src="/images/jakob-owens-eD3mggHwM5M-unsplash.jpg" alt="" />
+
+        <div class="inner-div">
+            <div class="hero-text-content">
+                <h1>inside the article</h1>
+                <p>let blog mind free and peace of discovering...</p>
+            </div>
+        </div>
+    </section>
+
+    <!--###################  end hero ###################-->
+
+    <!--###################  side and post ###################-->
+
+    <section class="section-one">
+        <aside>
+            <div class="filter">
+                <!-- news letter -->
+                <div class="newsletter-container">
+                    <h5>Subscribe to our news letter</h5>
+                    <form id="news-letter">
+                        <input id="newsLetter-email" placeholder="Your email" type="newsLetter-email" />
+                        <input id="newsLetter-send-btn" type="submit" value="Send" />
+                    </form>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-post-container">
+            <div class="main-post-contents">
+                <!-- banner imag name time  -->
+                <div class="main-post-banner">
+                    <!-- <i class="fa-solid fa-user"></i> -->
+
+                    <div class="main-post-banner-details">
+                        <h4>
+                            <%= post.title%>
+                        </h4>
+                        <div class="main-top-details"></div>
+                    </div>
+                </div>
+                <!-- end banner end imag name time  -->
+
+                <div class="main-block-image">
+                    <img src="<%= post.postPicture%>" alt="" />
+                </div>
+                <!-- loop in tags -->
+
+                <div class="tag">
+                    <%post.category.forEach((cat)=>{%> <%const categories=cat.split(",")%>
+                            <%categories.map((category)=>{%>
+
+                                <span>
+                                    <%=category%>
+                                </span>
+
+                                <%})%>
+                                    <%})%>
+                </div>
+                <div id="main-post-text-unclamp" class="main-post-text">
+                    <p>
+                        <%= post.post%>
+                    </p>
+                </div>
+
+                <div class="main-btn-and-icon">
+                    <!-- <a href="#" class="main-read-more-btn"> Read more </a> -->
+                    <div class="likes-view-comments-number">
+                        <i class="fa-solid fa-eye"><span class="viewnum"> 0 </span></i>
+                        <!-- <span>views: 0</span> -->
+                        <a href="">
+                            <i class="fa-solid fa-comment">
+                                <span class="commentspan"> 0 </span>
+                            </i></a>
+                        <!-- <a href="#" class="comment">comments: 0</a> -->
+                        <a href="#" class="likes"><i class="fa-solid fa-thumbs-up"><span class="likespan">
+                                    0</span></i></a>
+                        <!-- <i class="fa-regular fa-thumbs-up"></i> -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- about the author section -->
+    <section class="about-the-author">
+        <div class="about-the-author-image">
+            <img src=" <%= post.user.userImage%>" alt="" />
+        </div>
+        <div class="about-the-author-text">
+            <h4>About the author</h4>
+            <h5>
+                <strong>
+                    <%= post.user.name%>
+                </strong>
+            </h5>
+            <p>
+                <%= post.user.aboutTheUser%>
+            </p>
+            <div class="socials">
+                <!-- <span></span>
+                <span></span>
+                <span></span> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- related-topic -->
+    <!-- <section class="related-topic" id="related-posts-container">
+        <a href="">
+            <div class="related-topic-p.holeder">
+                <img src="" alt="" />
+            </div>
+        </a>
+
+        <a href="">
+            <div class="related-topic-p.holeder">
+                <img src="" alt="" />
+            </div>
+        </a>
+        <a href="">
+            <div class="related-topic-p.holeder">
+                <img src="" alt="" />
+            </div>
+        </a>
+    </section> -->
+
+    <!--  comments -->
+    <section class="comments">
+        <h5>comments: 0</h5>
+        <!-- <div class="line-div"></div> -->
+
+        <div class="output-comments">
+            <p>here is your comment</p>
+        </div>
+
+        <div class="comments-inputs">
+            <form id="commentForm">
+                <div class="message"></div>
+                <textarea id="comments" placeholder="Your thought" name=" comments"></textarea>
+                <!-- <input type="text-a" placeholder="Your thought"> -->
+                <button id="cbtn" type="submit">send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- <script type="module" src="/js/relatedcontent.js"></script> -->
+    <script type="module" src="/js/viewjs.js"></script>
+
+    <script src="/js/likes-and-unlike.js"></script>
+    <script src="/js/comment-like-view.js"></script>
+
+    <!--###################  footer  ###################-->
+
+    <%- include('./partials/footer'); %>

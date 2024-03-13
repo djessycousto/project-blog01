@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Your CSS styles remain unchanged */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 160px auto;
+
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .btn-dash {
+            padding: 5px 10px;
+            margin-right: 5px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .edit-btn {
+            background-color: #3498db;
+        }
+
+        .delete-btn {
+            background-color: #e74c3c;
+        }
+
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #eee;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #ccc;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #555;
+        }
+
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+
+    <nav>
+        <a href="#" class=" dash-btn" data-id="blog">Blog</a>
+        <a href="" class=" dash-btn" data-id="profile">Profile</a>
+        <a href="#" class=" dash-btn" data-id="logout">Logout</a>
+        <a href="#" class=" dash-btn" data-id="settings">Settings</a>
+        <a href="#" class=" dash-btn" data-id="change-password">Change Password</a>
+    </nav>
+
+    <main class="dashboard-container">
+        <section id="blog" class="page">
+            <h2>Blog Content</h2>
+
+            <table class="EntireTable">
+                <thead>
+                    <tr>
+                        <th>image</th>
+                        <th>role</th>
+                        <th>title</th>
+                        <th>post</th>
+                        <th>like</th>
+                        <th>view</th>
+
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+
+
+                </tbody>
+
+
+            </table>
+
+
+            <div class="blog-table-container">
+
+
+
+
+                <div class="edit-container hide-edit">
+                    <p>edit goes here</p>
+                    <div class="form-center">
+
+                        <form class="editForm " enctype="multipart/form-data">
+
+                            <label for="postPicture">image:</label>
+                            <input type="file" id="postPicture" name="postPicture">
+
+                            <label for="title">Post Title:</label>
+                            <input type="text" id="posttitle" name="title" required>
+
+                            <label for="post">Post:</label>
+                            <input type="text" id="post" name="post" required>
+
+
+                            <button id="edi-submit" type="submit">edit</button>
+                            <div class="message"></div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- Profile -->
+
+
+        </section>
+
+        <!-- Profile content goes here for the user -->
+
+        <section id="profile" class="page">
+            <h2>Profile</h2>
+            <form class="editFormProfile " enctype="multipart/form-data">
+
+                <label for=" userImage">image:</label>
+                <input type="file" id=" userImage" name=" userImage">
+
+                <label for="name">name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">email:</label>
+                <input type="text" id="email" name="email" required>
+
+
+                <button id="edi-profile-submit" type="submit">edit</button>
+                <div class="message"></div>
+            </form>
+
+            </div>
+
+        </section>
+
+        <section id="logout" class="page">
+            <h2>Logout</h2>
+            <!-- Logout content goes here -->
+        </section>
+
+        <section id="settings" class="page">
+            <h2>Settings</h2>
+            <!-- Settings content goes here -->
+        </section>
+
+        <section id="change-password" class="page">
+            <h2>Change Password</h2>
+            <!-- Change Password content goes here -->
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Your Dashboard. All rights reserved.
+    </footer>
+
+    <script>
+
+    </script>
+    <script src="../js/dash-blog.js"></script>
+    <script src="../js/browser.js"></script>
+</body>
+
+</html>

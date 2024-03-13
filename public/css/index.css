@@ -1,0 +1,17 @@
+@import url("reset.css");
+@import url("navbar.css");
+@import url("hero-section.css");
+@import url("main-contain.css");
+@import url("about.css");
+@import url("contact.css");
+@import url("insight.css");
+/* @import url("dashboard-style.css"); */
+/* others */
+@import url("register-body.css");
+
+/* error and success */
+@import url("success-error.css");
+
+@import url("footer.css");
+
+/* All css */

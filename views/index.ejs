@@ -1,0 +1,142 @@
+<%- include('./partials/nav', { userLogged: userLogged }) %>
+
+
+    <!--################### hero ###################-->
+    <section class="hero">
+        <img src="/images/jakob-owens-eD3mggHwM5M-unsplash.jpg" alt="" />
+
+        <div class="inner-div">
+            <div class="hero-text-content">
+                <h1>FREE MY MIND</h1>
+                <p>let blog mind free and peace of discovering...</p>
+            </div>
+        </div>
+    </section>
+
+    <!--###################  end hero ###################-->
+
+    <!--###################  side and post ###################-->
+
+    <section class="section-one">
+        <aside>
+            <div class="filter">
+                <form id="search-form">
+                    <input type="search" placeholder="search..." />
+                </form>
+                <div class="filter-1">
+                    <h3>FILTER BY TOPIC</h3>
+                    <span>Latest</span>
+                    <span> Accessibility </span>
+                    <span>Brand Development </span>
+                    <span> Content </span>
+                </div>
+
+                <div class="filter-1">
+                    <h3>FILTER BY TOPIC</h3>
+                    <span>Latest</span>
+                    <span> Accessibility </span>
+                    <span>Brand Development </span>
+                    <span> Content </span>
+                </div>
+
+                <!-- news letter -->
+                <div class="newsletter-container">
+                    <h5>Subscrib to our news letter</h5>
+                    <form id="news-letter">
+                        <input id="newsLetter-email" placeholder="Your email" type="newsLetter-email" />
+                        <input id="newsLetter-send-btn" type="submit" value="Send" />
+                        <div class="message">thanks</div>
+                    </form>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-post-container">
+            <%if (allPosts.length < 1){%>
+                <h1>No post found yet</h1>
+
+                <% }%>
+                    <%allPosts.forEach((post)=>{%>
+
+                        <div class="main-post-contents">
+
+                            <!-- banner imag name time  -->
+                            <div class="main-post-banner">
+                                <!-- <i class="fa-solid fa-user"></i> -->
+
+                                <div class="p-holder-for-pic">
+                                    <img src=" <%=post.user.userImage%>" alt="" />
+                                </div>
+
+                                <div class="main-post-banner-details">
+                                    <h4>
+                                        <%=post.title%>
+                                    </h4>
+                                    <div class="main-top-details">
+                                        <span>
+                                            <%=post.user.name%>
+                                        </span>
+                                        <span>
+                                            <%=post.createdAt.toLocaleTimeString("en-uk", {hour:"numeric",
+                                                minute:"numeric", hour12:false})%>
+                                        </span><span>
+                                            <%=post.createdAt.toLocaleDateString("en-uk", {day:"numeric",
+                                                month:"short",year:"numeric" })%>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end banner end imag name time  -->
+
+                            <div class="main-block-image <%= post.postPicture? '' : 'empty-image'
+      %>""> <% if (post.postPicture) { %>
+      <img src=" <%=post.postPicture %>" alt="Post Image" />
+                                <% } %>
+                            </div>
+
+                            <div class="tag">
+                                <%post.category.forEach((cat)=>{%> <%const categories=cat.split(',')%>
+                                        <%categories.map((category)=>{%>
+
+                                            <span>
+                                                <%= category%>
+                                            </span>
+
+                                            <%})%>
+                                                <% })%>
+                            </div>
+                            <div class="main-post-text">
+                                <p>
+                                    <%=post.post%>
+                                </p>
+                            </div>
+
+                            <div class="main-btn-and-icon">
+                                <a href="/posts/insight-article/<%= post._id + '/' + post.user._id %>"
+                                    class="main-read-more-btn">
+                                    Read more
+                                </a>
+                                <div class="main-btn-and-icon">
+                                    <!-- <a href="#" class="main-read-more-btn"> Read more </a> -->
+                                    <div class="likes-view-comments-number">
+                                        <i class="fa-solid fa-eye"><span class="viewnum"> 0</span></i>
+                                        <!-- <span>views: 0</span> -->
+                                        <i class="fa-solid fa-comment">
+                                            <span class="commentspan"> 0</span>
+                                        </i>
+                                        <!-- <a href="#" class="comment">comments: 0</a> -->
+                                        <a href="#" class="likes"><i class="fa-solid fa-thumbs-up"><span
+                                                    class="likespan"> 0</span></i></a>
+                                        <!-- <i class="fa-regular fa-thumbs-up"></i> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%})%>
+
+        </main>
+    </section>
+
+    <!--###################  footer  c###################-->
+
+    <%- include('./partials/footer') %>

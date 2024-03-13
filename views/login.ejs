@@ -1,0 +1,18 @@
+<%- include('./partials/nav'); %>
+    <div class="registration-form" enctype="multipart/form-data">
+        <h2>Login</h2>
+        <form id="loginForm">
+
+            <label for="username">Email:</label>
+            <input type="email" class="inputBorder userEmailInputBorder" id="userEmail" name="email" />
+
+            <label for="password">Password:</label>
+            <input type="password" class="inputBorder userPassInputBorder" id="userPassword" name="password" />
+
+            <button id="loginBtn" type="submit">Login</button>
+            <div class="message"></div>
+        </form>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="../js/login.js"></script>
+
+    </div>

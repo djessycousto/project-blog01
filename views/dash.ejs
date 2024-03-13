@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style-dash.css">
+    <title> Dashboard</title>
+
+
+</head>
+
+<body>
+
+
+    <header>
+        <div class="header-dash-container">
+            <div class="header-dash-text">
+                <h1>Hello <%= user.name%>
+                </h1>
+
+            </div>
+            <div class="profilpic-block">
+                <img src="" alt="">
+            </div>
+            <div class="das-logout">
+                <!-- logout  -->
+                <a href="#" class=" dash-logout ">Logout</a>
+
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <div class="dash-wrap-for-flex">
+        <div class="nav-container">
+            <nav>
+                <a href="#" class=" dash-btn" data-id="blog">Blog</a>
+                <a href="" class=" dash-btn" data-id="profile">Profile</a>
+
+                <a href="#" class=" dash-btn" data-id="settings">Settings</a>
+                <a href="#" class=" dash-btn" data-id="add-post">Add Post</a>
+            </nav>
+        </div>
+
+
+
+        <main class="dashboard-container ">
+
+            <section id="blog" class="page ">
+                <h2>Blog Content</h2>
+
+                <table class="EntireTable">
+                    <thead>
+                        <tr>
+                            <th>image</th>
+                            <th>role</th>
+                            <th>title</th>
+                            <th>post</th>
+                            <th>like</th>
+                            <th>view</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+
+
+                    </tbody>
+
+
+                </table>
+
+
+                <div class="blog-table-container">
+
+
+
+                    <!-- ########### edit -->
+                    <div class="edit-container hide-edit">
+                        <p>Edit form</p>
+                        <div class="edit-container-dash-wrap">
+                            <div class="form-center">
+
+                                <form class="editForm " enctype="multipart/form-data">
+                                    <div class="inpeditut-dash-file">
+                                        <label for="postPicture"></label>
+                                        <input type="file" id="postPicture" name="postPicture">
+                                    </div>
+                                    <!-- </div> -->
+
+
+                                    <div class="input-dash-text">
+                                        <label for="title">Post Title:</label>
+                                        <input type="text" id="posttitle" name="title" required>
+
+                                        <label for="post">Post:</label>
+                                        <textarea id="textarea-post" name="post" required></textarea>
+
+
+                                        <button id="edi-submit" type="submit">Edit</button>
+                                        <div class="message"></div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- Profile -->
+
+
+            </section>
+
+            <!-- Profile content goes here for the user -->
+
+            <section id="profile" class="page ">
+                <h2>Profile</h2>
+                <form class="editFormProfile " enctype="multipart/form-data">
+
+                    <label for=" userImage">image:</label>
+                    <input type="file" id=" userImage" name=" userImage">
+
+                    <label for="name">name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">email:</label>
+                    <input type="text" id="email" name="email" required>
+
+
+                    <button id="edi-profile-submit" type="submit">edit</button>
+                    <div class="message"></div>
+                </form>
+
+
+
+            </section>
+
+
+
+            <section id="settings" class="page">
+                <h2>Settings</h2>
+                <!-- Settings content goes here -->
+            </section>
+
+            <section id="add-post" class="page active">
+                <h2>Add post</h2>
+
+
+
+
+
+
+
+
+
+
+                <div class="addpost-form">
+
+                    <form id='postForm' enctype="multipart/form-data">
+                        <input type="file" id="postPictureAdd" name="postPicture">
+                        <input type="text" placeholder="Title" id="title" name="title" required>
+                        <input type="text" placeholder="Category" id="category" name="category" required>
+                        <textarea placeholder="express your mind" id="post" name="post" required></textarea>
+                        <button id="addpostBtn" type="submit">Publish</button>
+                        <div class="link-back"></div>
+                        <div class="message"></div>
+                    </form>
+                </div>
+
+            </section>
+
+
+
+
+
+
+
+
+            </section>
+
+
+
+        </main>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <footer>
+        &copy; 2024 Your Dashboard. All rights reserved.
+    </footer>
+
+    <script>
+
+    </script>
+    <script src="../js/dash-blog.js"></script>
+    <script src="../js/browser.js"></script>
+</body>
+
+</html>
